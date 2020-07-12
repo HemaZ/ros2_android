@@ -1,31 +1,29 @@
-name: Test Example
-
+name: Test CI
 on:
-  pull_request:
+  # pull_request:
   push:
     branches:
       - master
+  schedule:
+    # Run every hour. This helps detect flakiness,
+    # and broken external dependencies.
+    - cron:  '0 * * * *'
 
 jobs:
-  build-and-test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-      fail-fast: false
+  build_and_test:
+    runs-on: ubuntu-latest
+    container:
+      image: rostooling/setup-ros-docker:ubuntu-focal-ros-foxy-ros-base-testing-latest
     steps:
-    - name: Setup ROS 2
-      uses: ros-tooling/setup-ros@0.0.15
+    # TODO(setup-ros-docker#7): calling chown is necessary for now
+    - run: sudo chown -R rosbuild:rosbuild "$HOME" .
+    - uses: ros-tooling/action-ros-ci@0.0.16
       with:
-        required-ros-distributions: eloquent
-   - name: Run Tests
-        uses: ros-tooling/action-ros-ci@0.0.13
-        with:
-          package-name: android_node
-
-      - name: Upload Logs
-        uses: actions/upload-artifact@v1
-        with:
-          name: colcon-logs
-          path: ros_ws/log
-        if: always()
+        package-name: |
+          android_node
+          android_node_interfaces
+          
+    - uses: actions/upload-artifact@v1
+      with:
+        name: colcon-logs
+        path: ros_ws/log
