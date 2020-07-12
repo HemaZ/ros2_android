@@ -1,0 +1,8 @@
+/home/hema/ros2_ws/src/android_node_interfaces/build/CMakeFiles/install/strip.dir
+/home/hema/ros2_ws/src/android_node_interfaces/build/CMakeFiles/install/local.dir
+/home/hema/ros2_ws/src/android_node_interfaces/build/CMakeFiles/install.dir
+/home/hema/ros2_ws/src/android_node_interfaces/build/CMakeFiles/list_install_components.dir
+/home/hema/ros2_ws/src/android_node_interfaces/build/CMakeFiles/uninstall.dir
+/home/hema/ros2_ws/src/android_node_interfaces/build/CMakeFiles/test.dir
+/home/hema/ros2_ws/src/android_node_interfaces/build/CMakeFiles/edit_cache.dir
+/home/hema/ros2_ws/src/android_node_interfaces/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from android_node_interfaces/srv/Torch.srv
+// generated code does not contain a copyright notice
+
+
+module android_node_interfaces {
+  module srv {
+    struct Torch_Request {
+      boolean state;
+    };
+    struct Torch_Response {
+      boolean response;
+    };
+  };
+};
