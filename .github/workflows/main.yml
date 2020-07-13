@@ -1,4 +1,4 @@
-name: Test CI
+name: Build
 on:
   # pull_request:
   push:
@@ -22,4 +22,5 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: colcon-logs
-        path: ros_ws/log
+        path: ${{ steps.action_ros_ci_step.outputs.ros-workspace-directory-name }}/log
+    - if: always()  # upload the logs even when the build fails
