@@ -9,7 +9,7 @@ jobs:
   build_and_test:
     runs-on: ubuntu-latest
     container:
-      image: rostooling/setup-ros-docker:ubuntu-bionic-ros-eloquent-desktop
+      image: rostooling/setup-ros-docker:ubuntu-bionic-ros-eloquent-desktop-latest
     steps:
     # TODO(setup-ros-docker#7): calling chown is necessary for now
     - run: sudo chown -R rosbuild:rosbuild "$HOME" .
