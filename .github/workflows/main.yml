@@ -15,5 +15,5 @@ jobs:
     - run: sudo chown -R rosbuild:rosbuild "$HOME" .
     - uses: actions/checkout@v2
     - run: mkdir src && mv android_node src/android_node && mv android_node_interfaces src/android_node_interfaces
-    - run: ls /opt/ros && colcon build
+    - run: source /opt/ros/eloquent/setup.bash && colcon build
     
