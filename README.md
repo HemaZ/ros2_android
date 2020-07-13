@@ -22,4 +22,4 @@ replace **DEVICE_IP** and **PORT** with Your Device IP and Port number from the 
 
 ### Build status:
 
-![Test CI](https://github.com/HemaZ/ros2_android/workflows/Test%20CI/badge.svg)
+![Build](https://github.com/HemaZ/ros2_android/workflows/Build/badge.svg)
